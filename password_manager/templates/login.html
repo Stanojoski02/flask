@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<style>
+        body {
+            background-color: #000;
+            color: #00FF00;
+            font-family: "Courier New", Courier, monospace;
+            font-weight: 300;
+    background: linear-gradient(45deg, #00FF00 25%, #000 25%, #000 50%, #00FF00 50%, #00FF00 75%, #000 75%, #000);
+    transition: background-position 1s ease-in-out;
+    background-size: 400% 400%;
+        }
+
+        body:hover {
+    background-position: 100% 100%;
+}
+
+        h1 {
+            text-align: center;
+            margin-top: 100px;
+            font-weight: 100;
+            letter-spacing: 5px;
+            font-size: 48px;
+        }
+        form {
+            width: 400px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #222;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            border: 5px solid #00FF00;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 400;
+            letter-spacing: 2px;
+            font-size: 20px;
+        }
+        input[type="text"],
+        input[type="password"] {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background-color: #333;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            font-weight: 300;
+            color: #00FF00;
+            letter-spacing: 1px;
+        }
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            outline: none;
+            box-shadow: inset 0px 0px 5px rgba(0, 255, 0, 0.5);
+        }
+        input[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #00FF00;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: 2px;
+            transition: background-color 0.2s;
+            -webkit-animation: glitch 2s infinite;
+            animation: glitch 2s infinite;
+        }
+        input[type="submit"]:hover {
+            background-color: #222;
+        }
+        p.error {
+            color: #FF4136;
+            font-weight: 500;
+            letter-spacing: 2px;
+            font-size: 20px;
+        }
+
+        /* New CSS for the animation effect */
+        @keyframes glitch {
+            0% {
+                transform: translate(0);
+            }
+            10% {
+                transform: translate(-5px, 5px);
+            }
+            20% {
+                transform: translate(5px, -5px);
+            }
+            30% {
+                transform: translate(-5px, -5px);
+            }
+            40% {
+                transform: translate(5px, 5px);
+            }
+            50% {
+                transform: translate(-10px, 10px);
+            }
+            60% {
+                transform: translate(10px, -10px);
+            }
+            70% {
+                transform: translate(-10px, -10px);
+            }
+            80% {
+                transform: translate(10px, 10px);
+            }
+            90% {
+                transform: translate(-15px, 5px);
+            }
+            100% {
+
+transform: translate(0);
+}
+}
+            /* Add animation delay to input[type="submit"] */
+    input[type="submit"] {
+        animation-delay: 2s;
+    }
+
+
+
+
+</style>
+<body>
+<form method="POST" action="/login">
+  <label for="username">Username:</label>
+  <input type="text" name="username" id="username"><br>
+
+  <label for="password">Password:</label>
+  <input type="password" name="password" id="password"><br>
+
+  <input type="submit" value="Submit">
+</form>
+</body>
+</html>
