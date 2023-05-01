@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Websites</title>
+    <style>
+ body {
+    background-color: #000000;
+    color: #00FF00;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 16px;
+}
+
+h1 {
+    font-size: 24px;
+    text-align: center;
+    text-shadow: 2px 2px #00FF00;
+}
+
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #00FF00;
+    padding: 10px;
+    text-align: center;
+}
+
+input[type="text"], input[type="password"] {
+    background-color: #000000;
+    color: #00FF00;
+    border: 1px solid #00FF00;
+    padding: 5px;
+    font-family: "Courier New", Courier, monospace;
+}
+
+input[type="submit"] {
+    background-color: #00FF00;
+    color: #000000;
+    border: none;
+    padding: 5px 10px;
+    font-family: "Courier New", Courier, monospace;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+input[type="submit"]:hover {
+    background-color: #000000;
+    color: #00FF00;
+}
+
+tr:nth-child(even) {
+    background-color: #000000;
+}
+
+tr:hover {
+    background-color: #00FF00;
+    transition: transform 0.2s ease-in-out;
+    transform: scale(1.1);
+}
+
+
+    </style>
+
+
+</head>
+<body>
+<h1>Websites for {{ username }}</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Website</th>
+        <th>Username</th>
+        <th>Password</th>
+    </tr>
+    </thead>
+    <tbody>
+    <form method="POST">
+        <tr>
+            <td><input type="text" name="website" id="website"></td>
+            <td><input type="text" name="username" id="username"></td>
+            <td><input type="password" name="password" id="password"> <input type="submit" value="Add"></td>
+        </tr>
+    </form>
+    {% for website, credentials in websites.items() %}
+    <tr>
+        <td>{{ website }}</td>
+        <td>{{ credentials.username }}</td>
+        <td>{{ credentials.password }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>
